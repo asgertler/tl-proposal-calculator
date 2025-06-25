@@ -1,45 +1,42 @@
-import { Resend } from 'npm:resend@2.0.0';
+/// <reference types="https://esm.sh/v135/resend@2.0.0/index.d.ts" />
 
-const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
+import { serve } from 'https://deno.land/std@0.177.0/http/server.ts';
+import { Resend } from 'https://esm.sh/resend@2.0.0';
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers':
-    'authorization, x-client-info, apikey, content-type',
-};
+serve(async (req) => {
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  };
 
-Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    // Verify API key is present
+    // Load API key securely from Supabase Edge secret
     const apiKey = Deno.env.get('RESEND_API_KEY');
-    if (!apiKey) {
-      throw new Error('Missing Resend API key');
-    }
+    if (!apiKey) throw new Error('Missing RESEND_API_KEY');
 
     const { email } = await req.json();
+    if (!email) throw new Error('Missing email in request body');
 
-    // Test the API key with a simple validation request
+    const resend = new Resend(apiKey);
+
     const response = await resend.emails.send({
-      from: 'test@yourdomain.com',
+      from: 'onboarding@resend.dev',
       to: email,
-      subject: 'API Key Verification Test',
-      html: '<p>This email confirms that your Resend API key is working correctly.</p>',
+      subject: 'Test Email from Supabase',
+      html: '<p>This is a test email from Supabase + Resend.</p>',
     });
 
+    // Validate response
     if (!response.id) {
-      throw new Error('Invalid API key or API response');
+      throw new Error('Email failed to send. No ID returned.');
     }
 
     return new Response(
-      JSON.stringify({
-        success: true,
-        message: 'API key verified successfully',
-        data: response,
-      }),
+      JSON.stringify({ success: true, data: response }),
       {
         headers: {
           ...corsHeaders,
@@ -47,29 +44,16 @@ Deno.serve(async (req) => {
         },
       }
     );
-  } catch (error) {
-    console.error('Email verification error:', error);
-
-    let errorMessage = 'Failed to verify email configuration';
-    let statusCode = 400;
-
-    // Check for specific error types
-    if (error.message.includes('API key')) {
-      errorMessage = 'Invalid or missing API key';
-      statusCode = 401;
-    } else if (error.message.includes('rate limit')) {
-      errorMessage = 'Rate limit exceeded';
-      statusCode = 429;
-    }
-
+  } catch (err: any) {
+    console.error('verify-email error:', err);
     return new Response(
       JSON.stringify({
         success: false,
-        error: errorMessage,
-        details: error.response || error.message,
+        error: err.message || 'Unknown error',
+        raw: err,
       }),
       {
-        status: statusCode,
+        status: 400,
         headers: {
           ...corsHeaders,
           'Content-Type': 'application/json',
