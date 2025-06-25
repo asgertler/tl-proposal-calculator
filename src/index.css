@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light-bg dark:bg-space-black text-light-text-primary dark:text-white font-light;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-widest uppercase;
+  }
+
+  input, textarea, select {
+    @apply bg-light-card dark:bg-space-gray-900 border-light-border dark:border-space-gray-700 
+           text-light-text-primary dark:text-white placeholder-light-text-secondary dark:placeholder-space-gray-400
+           focus:border-space-blue focus:ring-1 focus:ring-space-blue rounded-md
+           transition-colors duration-200;
+  }
+  
+  input[type="date"] {
+    @apply text-light-text-primary dark:text-space-gray-200;
+    color-scheme: dark;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .space-card {
+    @apply bg-light-card dark:bg-space-gray-900 border border-light-border dark:border-space-gray-700 
+           rounded-lg p-6 hover:border-space-blue/50 transition-all duration-200;
+  }
+
+  .space-button {
+    @apply px-4 py-2 bg-space-blue text-white rounded-md hover:bg-space-blue-light 
+           transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+           uppercase tracking-wider text-sm font-light;
+  }
+
+  .space-button-outline {
+    @apply px-4 py-2 border border-light-border dark:border-space-gray-700 
+           text-light-text-primary dark:text-white rounded-md
+           hover:border-space-blue hover:text-space-blue-light transition-colors duration-200
+           uppercase tracking-wider text-sm font-light;
+  }
+
+  .space-input {
+    @apply w-full p-2 bg-light-card dark:bg-space-gray-900 
+           border border-light-border dark:border-space-gray-700 rounded-md
+           focus:border-space-blue focus:ring-1 focus:ring-space-blue
+           text-light-text-primary dark:text-white 
+           placeholder-light-text-secondary dark:placeholder-space-gray-400;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .shadow-md, .shadow-lg, .hover\:shadow-lg {
+    box-shadow: none !important;
+  }
+  
+  button {
+    display: none !important;
+  }
+}
