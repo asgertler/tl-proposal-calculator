@@ -2,43 +2,43 @@ import type { Role } from '../types';
 
 export const roles: Role[] = [
   {
-    id: 'associate',
-    name: 'Associate',
+    id: 1,
+    title: 'Associate',
     defaultRate: 91.08
   },
   {
-    id: 'sr-associate',
-    name: 'Sr. Associate',
+    id: 2,
+    title: 'Sr. Associate',
     defaultRate: 98.52
   },
   {
-    id: 'senior',
-    name: 'Senior',
+    id: 3,
+    title: 'Senior',
     defaultRate: 114.10
   },
   {
-    id: 'principal',
-    name: 'Principal',
+    id: 4,
+    title: 'Principal',
     defaultRate: 176.39
   },
   {
-    id: 'fellow',
-    name: 'Fellow',
+    id: 5,
+    title: 'Fellow',
     defaultRate: 184.02
   },
   {
-    id: 'manager',
-    name: 'Manager',
+    id: 6,
+    title: 'Manager',
     defaultRate: 184.02
   },
   {
-    id: 'vp',
-    name: 'VP',
+    id: 7,
+    title: 'VP',
     defaultRate: 202.14
   },
   {
-    id: 'executive',
-    name: 'Executive',
+    id: 8,
+    title: 'Executive',
     defaultRate: 240.74
   }
 ];

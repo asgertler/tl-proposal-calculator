@@ -6,8 +6,8 @@ export interface Task {
 }
 
 export interface Role {
-  id: string;
-  name: string;
+  id: number;
+  title: string;
   defaultRate: number;
 }
 
