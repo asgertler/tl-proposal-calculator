@@ -111,7 +111,7 @@ const CostSummary = () => {
                 </td>
                 <td className="p-3 border-b dark:border-space-gray-700 text-center text-space-gray-100">{data.hours}</td>
                 <td className="p-3 border-b dark:border-space-gray-700 text-center text-space-gray-100">{formatCurrency(data.billRate)}</td>
-                <td className="p-3 border-b dark:border-space-gray-700 text-right font-medium text-white">{formatCurrency(data.cost)}</td>
+                <td className="p-3 border-b dark:border-space-gray-700 text-right font-medium dark:text-white">{formatCurrency(data.cost)}</td>
               </tr>
             ))}
             
