@@ -15,7 +15,7 @@ import { ThemeProvider } from './context/ThemeContext';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/tl-proposal-calculator/">
         <Routes>
           <Route
             path="/"
