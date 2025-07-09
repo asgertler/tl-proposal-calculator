@@ -141,7 +141,7 @@ const PersonnelSection = () => {
             <Clock size={20} className="text-space-blue-light" />
             <h3 className="text-lg">Total Hours</h3>
           </div>
-          <p className="text-2xl text-white">{totalHours} hrs</p>
+          <p className="text-2xl dark:text-white">{totalHours} hrs</p>
           <p className="text-sm text-space-gray-400 mt-1">Maximum parallel work hours</p>
         </div>
       </div>
