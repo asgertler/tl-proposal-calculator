@@ -112,7 +112,7 @@ const ExportDialog: React.FC<ExportDialogProps> = ({
               />
               <button
                 className="space-button-outline px-3 py-2 disabled:opacity-50"
-                onClick={handleVerifyEmail}
+                onClick={(handleVerifyEmail)}
                 disabled={isVerifying}
                 title="Send test email"
               >
