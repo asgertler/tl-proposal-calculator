@@ -1,6 +1,6 @@
 {
   "name": "proposal-calculator-app",
-  "honepage": "https://asgertler.github.io/tl-proposal-calculator/",
+  "homepage": "https://asgertler.github.io/tl-proposal-calculator/",
   "private": true,
   "version": "1.0.0",
   "type": "module",
