@@ -42,7 +42,7 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
-        run: npm run build -- --mode production
+        run: npm run build --base /tl-proposal-calculator/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
