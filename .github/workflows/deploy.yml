@@ -43,6 +43,10 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
         run: npm run build -- --base /tl-proposal-calculator/
+      - name: Inspect build output
+        run: |
+          head -40 dist/index.html
+          grep base dist/index.html || echo "No base tag found"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
