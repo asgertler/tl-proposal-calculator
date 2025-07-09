@@ -50,11 +50,11 @@ const PersonnelSection = () => {
         <table className="w-full border-collapse">
           <thead>
             <tr>
-              <th className="sticky left-0 z-20 bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 min-w-[200px]">Role</th>
-              <th className="sticky left-[200px] z-20 bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 min-w-[200px]">Notes</th>
-              <th className="sticky left-[400px] z-20 bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 min-w-[150px]">Bill Rate</th>
+              <th className="sticky left-0 z-20 dark:bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 min-w-[200px]">Role</th>
+              <th className="sticky left-[200px] z-20 dark:bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 min-w-[200px]">Notes</th>
+              <th className="sticky left-[400px] z-20 dark:bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 min-w-[150px]">Bill Rate</th>
               {uniqueTasks.map(taskId => (
-                <th key={taskId} className="bg-space-gray-800 p-3 text-center text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 min-w-[120px] whitespace-nowrap">
+                <th key={taskId} className="dark:bg-space-gray-800 p-3 text-center text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 min-w-[120px] whitespace-nowrap">
                   <div className="flex items-center justify-between px-2">
                     {getTaskName(taskId)}
                     <button
@@ -66,14 +66,14 @@ const PersonnelSection = () => {
                   </div>
                 </th>
               ))}
-              <th className="bg-space-gray-800 p-3 text-right text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 min-w-[120px]">Total Cost</th>
-              <th className="bg-space-gray-800 p-3 text-center text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 w-[80px]">Actions</th>
+              <th className="dark:bg-space-gray-800 p-3 text-right text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 min-w-[120px]">Total Cost</th>
+              <th className="dark:bg-space-gray-800 p-3 text-center text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 w-[80px]">Actions</th>
             </tr>
           </thead>
           <tbody>
             {personnel.map(person => (
               <tr key={person.id} className="hover:bg-space-gray-800/50">
-                <td className="sticky left-0 z-10 bg-space-gray-900 p-3 border-b border-space-gray-700">
+                <td className="sticky left-0 z-10 dark:bg-space-gray-900 p-3 border-b dark:border-space-gray-700">
                   <select 
                     className="space-input w-full"
                     value={person.role.id}
@@ -89,7 +89,7 @@ const PersonnelSection = () => {
                     ))}
                   </select>
                 </td>
-                <td className="sticky left-[200px] z-10 bg-space-gray-900 p-3 border-b border-space-gray-700">
+                <td className="sticky left-[200px] z-10 dark:bg-space-gray-900 p-3 border-b dark:border-space-gray-700">
                   <textarea
                     className="space-input min-h-[60px] resize-y"
                     placeholder="Add notes..."
@@ -97,7 +97,7 @@ const PersonnelSection = () => {
                     onChange={(e) => updatePersonnelNotes(person.id, e.target.value)}
                   />
                 </td>
-                <td className="sticky left-[400px] z-10 bg-space-gray-900 p-3 border-b border-space-gray-700">
+                <td className="sticky left-[400px] z-10 dark:bg-space-gray-900 p-3 border-b dark:border-space-gray-700">
                   <input
                     type="number"
                     className="space-input"
@@ -108,7 +108,7 @@ const PersonnelSection = () => {
                 {uniqueTasks.map(taskId => {
                   const task = person.tasks.find(t => t.id === taskId);
                   return (
-                    <td key={taskId} className="p-3 border-b border-space-gray-700 text-center">
+                    <td key={taskId} className="p-3 border-b dark:border-space-gray-700 text-center">
                       <input
                         type="number"
                         className="space-input w-24 text-center"
@@ -118,10 +118,10 @@ const PersonnelSection = () => {
                     </td>
                   );
                 })}
-                <td className="p-3 border-b border-space-gray-700 text-right font-medium text-white">
+                <td className="p-3 border-b dark:border-space-gray-700 text-right font-medium dark:text-white">
                   {formatCurrency(calculatePersonnelCost(person.id))}
                 </td>
-                <td className="p-3 border-b border-space-gray-700 text-center">
+                <td className="p-3 border-b dark:border-space-gray-700 text-center">
                   <button
                     className="text-red-500 hover:text-red-700 transition-colors"
                     onClick={() => removePersonnel(person.id)}
@@ -136,7 +136,7 @@ const PersonnelSection = () => {
       </div>
 
       <div className="mt-6">
-        <div className="bg-space-gray-800 p-4 rounded-lg border border-space-gray-700">
+        <div className="dark:bg-space-gray-800 p-4 rounded-lg border dark:border-space-gray-700">
           <div className="flex items-center gap-2 mb-2">
             <Clock size={20} className="text-space-blue-light" />
             <h3 className="text-lg">Total Hours</h3>

@@ -64,19 +64,19 @@ const CostSummary = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-space-gray-800 p-4 rounded-lg border border-space-gray-700">
+        <div className="dark:bg-space-gray-800 p-4 rounded-lg border dark:border-space-gray-700">
           <h3 className="text-lg text-space-gray-200 mb-2">Total Cost</h3>
-          <p className="text-3xl text-white">{formatCurrency(totalCost)}</p>
+          <p className="text-3xl dark:text-white">{formatCurrency(totalCost)}</p>
           <p className="text-sm text-space-gray-400 mt-1">Includes 30% profit margin</p>
         </div>
         
-        <div className="bg-space-gray-800 p-4 rounded-lg border border-space-gray-700">
+        <div className="dark:bg-space-gray-800 p-4 rounded-lg border dark:border-space-gray-700">
           <h3 className="text-lg text-space-gray-200 mb-2">Base Cost</h3>
-          <p className="text-3xl text-white">{formatCurrency(totalWithoutMargin)}</p>
+          <p className="text-3xl dark:text-white">{formatCurrency(totalWithoutMargin)}</p>
           <p className="text-sm text-space-gray-400 mt-1">Cost without profit margin</p>
         </div>
         
-        <div className="bg-space-gray-800 p-4 rounded-lg border border-space-gray-700">
+        <div className="dark:bg-space-gray-800 p-4 rounded-lg border dark:border-space-gray-700">
           <h3 className="text-lg text-space-gray-200 mb-2">Profit</h3>
           <p className="text-3xl text-space-blue-light">{formatCurrency(profitAmount)}</p>
           <p className="text-sm text-space-gray-400 mt-1">30% profit margin</p>
@@ -86,7 +86,7 @@ const CostSummary = () => {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-space-gray-800">
+            <tr className="dark:bg-space-gray-800">
               <th className="p-3 text-left text-sm text-space-gray-200 border-b border-space-gray-700">Role</th>
               <th className="p-3 text-left text-sm text-space-gray-200 border-b border-space-gray-700">Notes</th>
               <th className="p-3 text-center text-sm text-space-gray-200 border-b border-space-gray-700">Hours</th>
@@ -97,8 +97,8 @@ const CostSummary = () => {
           <tbody>
             {Object.entries(roleData).map(([role, data]) => (
               <tr key={role} className="hover:bg-space-gray-800/50">
-                <td className="p-3 border-b border-space-gray-700 text-space-gray-100">{role}</td>
-                <td className="p-3 border-b border-space-gray-700 text-space-gray-100 max-w-[300px]">
+                <td className="p-3 border-b dark:border-space-gray-700 text-space-gray-100">{role}</td>
+                <td className="p-3 border-b dark:border-space-gray-700 text-space-gray-100 max-w-[300px]">
                   {data.notes.length > 0 ? (
                     <ul className="list-disc list-inside text-sm">
                       {data.notes.map((note, index) => (
@@ -109,15 +109,15 @@ const CostSummary = () => {
                     <span className="text-space-gray-400 text-sm italic">No notes</span>
                   )}
                 </td>
-                <td className="p-3 border-b border-space-gray-700 text-center text-space-gray-100">{data.hours}</td>
-                <td className="p-3 border-b border-space-gray-700 text-center text-space-gray-100">{formatCurrency(data.billRate)}</td>
-                <td className="p-3 border-b border-space-gray-700 text-right font-medium text-white">{formatCurrency(data.cost)}</td>
+                <td className="p-3 border-b dark:border-space-gray-700 text-center text-space-gray-100">{data.hours}</td>
+                <td className="p-3 border-b dark:border-space-gray-700 text-center text-space-gray-100">{formatCurrency(data.billRate)}</td>
+                <td className="p-3 border-b dark:border-space-gray-700 text-right font-medium text-white">{formatCurrency(data.cost)}</td>
               </tr>
             ))}
             
-            <tr className="bg-space-gray-800 font-semibold">
-              <td colSpan={4} className="p-3 border-t-2 border-space-gray-600 text-right">Total:</td>
-              <td className="p-3 border-t-2 border-space-gray-600 text-right text-lg text-white">{formatCurrency(totalCost)}</td>
+            <tr className="dark:bg-space-gray-800 font-semibold">
+              <td colSpan={4} className="p-3 border-t-2 dark:border-space-gray-600 text-right">Total:</td>
+              <td className="p-3 border-t-2 dark:border-space-gray-600 text-right text-lg dark:text-white">{formatCurrency(totalCost)}</td>
             </tr>
           </tbody>
         </table>

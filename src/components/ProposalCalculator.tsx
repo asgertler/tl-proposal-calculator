@@ -42,8 +42,8 @@ const ProjectConfigurationSection = () => {
         <button
           className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
             activeTab === 'library'
-              ? 'bg-space-gray-800 text-space-blue-light'
-              : 'hover:bg-space-gray-800'
+              ? 'bg-light-border dark:bg-space-gray-800 border border-light-border dark:border-space-gray-700 text-space-blue-light'
+              : 'hover:bg-light-border dark:hover:bg-space-gray-800'
           }`}
           onClick={() => setActiveTab('library')}
         >
@@ -54,8 +54,8 @@ const ProjectConfigurationSection = () => {
         <button
           className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
             activeTab === 'management'
-              ? 'bg-space-gray-800 text-space-blue-light'
-              : 'hover:bg-space-gray-800'
+              ? 'bg-light-border dark:bg-space-gray-800 border border-light-border dark:border-space-gray-700 text-space-blue-light'
+              : 'hover:bg-light-border dark:hover:bg-space-gray-800'
           }`}
           onClick={() => setActiveTab('management')}
         >
@@ -85,8 +85,8 @@ const ResourcePlanningSection = () => {
         <button
           className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
             activeTab === 'personnel'
-              ? 'bg-space-gray-800 text-space-blue-light'
-              : 'hover:bg-space-gray-800'
+              ? 'bg-light-border dark:bg-space-gray-800 border border-light-border dark:border-space-gray-700 text-space-blue-light'
+              : 'hover:bg-light-border dark:hover:bg-space-gray-800'
           }`}
           onClick={() => setActiveTab('personnel')}
         >
@@ -97,8 +97,8 @@ const ResourcePlanningSection = () => {
         <button
           className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
             activeTab === 'burnplan'
-              ? 'bg-space-gray-800 text-space-blue-light'
-              : 'hover:bg-space-gray-800'
+              ? 'bg-light-border dark:bg-space-gray-800 border border-light-border dark:border-space-gray-700 text-space-blue-light'
+              : 'hover:bg-light-border dark:hover:bg-space-gray-800'
           }`}
           onClick={() => setActiveTab('burnplan')}
         >
