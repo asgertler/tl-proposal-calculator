@@ -21,16 +21,16 @@ interface ProposalContextType {
   updatePersonnelNotes: (personnelId: string, notes: string) => void;
   addTaskToPersonnel: (personnelId: string, task: Task) => void;
   addTaskToAllPersonnel: (task: Task) => void;
-  updateTaskHours: (personnelId: string, taskId: string, hours: number) => void;
+  updateTaskHours: (personnelId: string, taskId: number, hours: number) => void;
   removeTaskFromPersonnel: (personnelId: string, taskId: string) => void;
-  removeTaskFromAllPersonnel: (taskId: string) => void;
+  removeTaskFromAllPersonnel: (taskId: number) => void;
   calculatePersonnelCost: (personnelId: string) => number;
   addRecipeToAllPersonnel: (recipe: Recipe) => void;
   updateBurnPlanDates: (startDate: string, endDate: string) => void;
   updateBurnPlanAllocation: (allocation: {
     weekId: number;
     personnelId: string;
-    taskId: string;
+    taskId: number;
     hours: number;
   }) => void;
   getTotalCost: () => number;

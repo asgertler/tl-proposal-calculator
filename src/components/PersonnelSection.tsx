@@ -21,7 +21,7 @@ const PersonnelSection = () => {
     personnel.flatMap(p => p.tasks.map(t => t.id))
   ));
   
-  const getTaskName = (taskId: string) => {
+  const getTaskName = (taskId: number) => {
     for (const person of personnel) {
       const task = person.tasks.find(t => t.id === taskId);
       if (task) return task.name;
@@ -84,7 +84,7 @@ const PersonnelSection = () => {
                   >
                     {roles.map(role => (
                       <option key={role.id} value={role.id}>
-                        {role.title}
+                        {role.name}
                       </option>
                     ))}
                   </select>
