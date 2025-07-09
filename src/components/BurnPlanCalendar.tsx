@@ -41,7 +41,7 @@ const BurnPlanCalendar = () => {
     return {
       id: person.id,
       name: person.name,
-      role: person.role.name,
+      role: person.role.title,
       notes: person.notes || '',
       totalHours,
       hoursPerWeek,

@@ -78,13 +78,13 @@ const PersonnelSection = () => {
                     className="space-input w-full"
                     value={person.role.id}
                     onChange={(e) => {
-                      const role = roles.find(r => r.id === e.target.value);
+                      const role = roles.find(r => r.id === Number(e.target.value));
                       if (role) updatePersonnelRole(person.id, role);
                     }}
                   >
                     {roles.map(role => (
                       <option key={role.id} value={role.id}>
-                        {role.name}
+                        {role.title}
                       </option>
                     ))}
                   </select>

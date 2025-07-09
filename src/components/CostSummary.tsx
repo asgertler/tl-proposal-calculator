@@ -21,7 +21,7 @@ const CostSummary = () => {
   const profitAmount = getProfitAmount();
   
   const roleData = personnel.reduce((acc, person) => {
-    const roleKey = person.role.name;
+    const roleKey = person.role.title;
     const totalHours = person.tasks.reduce((sum, task) => sum + task.hours, 0);
     const totalCost = totalHours * person.billRate;
     

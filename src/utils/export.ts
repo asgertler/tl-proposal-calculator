@@ -12,7 +12,7 @@ export const exportToExcel = (personnel: Personnel[], burnPlan: BurnPlan) => {
 
     personnel.forEach(person => {
       const allocation = week.allocations.find(a => a.personnelId === person.id);
-      row[`${person.role.name} Hours`] = allocation?.hours || 0;
+      row[`${person.role.title} Hours`] = allocation?.hours || 0;
     });
 
     return row;
@@ -24,7 +24,7 @@ export const exportToExcel = (personnel: Personnel[], burnPlan: BurnPlan) => {
     const totalCost = totalHours * person.billRate;
 
     return {
-      'Role': person.role.name,
+      'Role': person.role.title,
       'Bill Rate': formatCurrency(person.billRate),
       'Total Hours': totalHours,
       'Total Cost': formatCurrency(totalCost),
@@ -63,7 +63,7 @@ export const exportToExcel = (personnel: Personnel[], burnPlan: BurnPlan) => {
 export const exportToCSV = (personnel: Personnel[], burnPlan: BurnPlan) => {
   // Combine burn plan and cost summary data
   let csv = 'Burn Plan\n';
-  csv += 'Week,Date Range,' + personnel.map(p => `${p.role.name} Hours`).join(',') + '\n';
+  csv += 'Week,Date Range,' + personnel.map(p => `${p.role.ntitleame} Hours`).join(',') + '\n';
 
   burnPlan.weeks.forEach((week, weekIndex) => {
     const row = [

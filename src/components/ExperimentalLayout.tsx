@@ -112,7 +112,7 @@ const ExperimentalLayout = () => {
                                hover:border-blue-500/50 transition-colors"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-light uppercase tracking-wider">{person.role.name}</h4>
+                        <h4 className="font-light uppercase tracking-wider">{person.role.title}</h4>
                         <span className="text-sm text-blue-500">{formatCurrency(person.billRate)}/hr</span>
                       </div>
                       <p className="text-sm text-slate-400">{person.notes || 'No notes added'}</p>
