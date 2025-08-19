@@ -72,7 +72,7 @@ const PersonnelSection = () => {
           </thead>
           <tbody>
             {personnel.map(person => (
-              <tr key={person.id} className="hover:bg-space-gray-800/50">
+              <tr key={person.id} className="hover:bg-light-border dark:hover:bg-space-gray-800/50">
                 <td className="sticky left-0 z-10 dark:bg-space-gray-900 p-3 border-b dark:border-space-gray-700">
                   <select 
                     className="space-input w-full"
