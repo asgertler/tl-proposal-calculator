@@ -63,7 +63,7 @@ export const exportToExcel = (personnel: Personnel[], burnPlan: BurnPlan) => {
 export const exportToCSV = (personnel: Personnel[], burnPlan: BurnPlan) => {
   // Combine burn plan and cost summary data
   let csv = 'Burn Plan\n';
-  csv += 'Week,Date Range,' + personnel.map(p => `${p.role.name} Hours`).join(',') + '\n';
+  csv += 'Week,Date Range,' + personnel.map(p => `${p.role.ntitleame} Hours`).join(',') + '\n';
 
   burnPlan.weeks.forEach((week, weekIndex) => {
     const row = [

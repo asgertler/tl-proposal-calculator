@@ -2,117 +2,117 @@ import type { Task } from '../types';
 
 export const taskLibrary: Task[] = [
   {
-    id: 'project-management',
+    id: 1,
     name: 'Project Management',
     hours: 50
   },
   {
-    id: 'wireframes',
+    id: 2,
     name: 'Wireframes',
     hours: 10
   },
   {
-    id: 'ui-design',
+    id: 3,
     name: 'UI Design',
     hours: 20
   },
   {
-    id: 'prototyping',
+    id: 4,
     name: 'Prototyping',
     hours: 15
   },
   {
-    id: 'user-interviews',
+    id: 5,
     name: 'User Interviews',
     hours: 12
   },
   {
-    id: 'dev-docs',
+    id: 6,
     name: 'Development Docs',
     hours: 8
   },
   {
-    id: 'internal-kickoff',
+    id: 7,
     name: 'Internal Kick-off Meeting',
     hours: 3
   },
   {
-    id: 'external-kickoff',
+    id: 8,
     name: 'External Kick-off Meeting',
     hours: 5
   },
   {
-    id: 'research-synthesis',
+    id: 9,
     name: 'Research Synthesis',
     hours: 60
   },
   {
-    id: 'research-plan',
+    id: 10,
     name: 'Develop Research Plan',
     hours: 4
   },
   {
-    id: 'review-materials',
+    id: 11,
     name: 'Review Client Provided Materials',
     hours: 40
   },
   {
-    id: 'findings-docs',
+    id: 12,
     name: 'Develop Findings Docs',
     hours: 10
   },
   {
-    id: 'creative-brief',
+    id: 13,
     name: 'Develop Creative Brief',
     hours: 5
   },
   {
-    id: 'lowfi-map',
+    id: 14,
     name: 'Develop Low-fi Map Wireframe',
     hours: 10
   },
   {
-    id: 'content-vision',
+    id: 15,
     name: 'Refine Content & Vision',
     hours: 20
   },
   {
-    id: 'midfi-map',
+    id: 16,
     name: 'Develop Mid-fi Map Wireframe',
     hours: 40
   },
   {
-    id: 'highfi-map',
+    id: 17,
     name: 'Develop High-fi Map Wireframe',
     hours: 20
   },
   {
-    id: 'client-handoff',
+    id: 18,
     name: 'Conduct Final Client Hand-off',
     hours: 6
   },
   {
-    id: 'user-testing',
+    id: 19,
     name: 'User Testing Sessions',
     hours: 16
   },
   {
-    id: 'accessibility-audit',
+    id: 20,
     name: 'Accessibility Audit',
     hours: 8
   },
   {
-    id: 'design-system',
+    id: 21,
     name: 'Design System Development',
     hours: 24
   },
   {
-    id: 'stakeholder-interviews',
+    id: 22,
     name: 'Stakeholder Interviews',
     hours: 10
   },
   {
-    id: 'competitive-analysis',
+    id: 23,
     name: 'Competitive Analysis',
     hours: 12
   }

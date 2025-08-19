@@ -1,12 +1,12 @@
 export interface Task {
-  id: string;
+  id: number;
   name: string;
   hours: number;
   isCustom?: boolean;
 }
 
 export interface Role {
-  id: string;
+  id: number;
   name: string;
   defaultRate: number;
 }

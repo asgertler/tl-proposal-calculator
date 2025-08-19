@@ -119,15 +119,15 @@ const BurnPlanCalendar = () => {
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
-              <tr className="bg-space-gray-800">
-                <th className="sticky left-0 z-20 bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 min-w-[250px]">
+              <tr className="">
+                <th className="sticky left-0 z-20 p-3 text-left text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 min-w-[200px]">
                   Resource & Total Hours
                 </th>
-                <th className="sticky left-[250px] z-20 bg-space-gray-800 p-3 text-left text-sm font-semibold text-space-gray-200 border-b border-space-gray-700 min-w-[200px]">
+                <th className="sticky left-[250px] z-20 p-3 text-left text-sm font-semibold text-space-gray-200 border-b dark:border-space-gray-700 min-w-[200px]">
                   Notes
                 </th>
                 {weekRanges.map(week => (
-                  <th key={week.id} className="p-2 text-center text-sm text-space-gray-200 border-b border-space-gray-700" style={{minWidth: '120px'}}>
+                  <th key={week.id} className="p-2 text-center text-sm text-space-gray-200 border-b dark:border-space-gray-700" style={{minWidth: '120px'}}>
                     <div>{week.label}</div>
                     <div className="text-xs text-space-gray-400">{week.startDate} - {week.endDate}</div>
                   </th>
@@ -136,12 +136,12 @@ const BurnPlanCalendar = () => {
             </thead>
             <tbody>
               {resourceHours.map((resource, resourceIndex) => (
-                <tr key={resource.id} className="hover:bg-space-gray-800/50">
-                  <td className="sticky left-0 z-10 bg-space-gray-900 p-3 border-b border-space-gray-700">
+                <tr key={resource.id} className="hover:bg-light-border dark:hover:bg-space-gray-800/50">
+                  <td className="sticky left-0 z-10 p-3 border-b dark:border-space-gray-700">
                     <div className="font-medium text-space-gray-100">{resource.role}</div>
                     <div className="text-sm text-space-gray-400">{resource.totalHours} total hours</div>
                   </td>
-                  <td className="sticky left-[250px] z-10 bg-space-gray-900 p-3 border-b border-space-gray-700">
+                  <td className="sticky left-[250px] z-10 p-3 border-b dark:border-space-gray-700">
                     <textarea
                       className="space-input min-h-[60px] resize-y"
                       placeholder="Add notes..."
@@ -157,7 +157,7 @@ const BurnPlanCalendar = () => {
                     );
                     
                     return (
-                      <td key={week.id} className="p-2 border-b border-space-gray-700 text-center">
+                      <td key={week.id} className="p-2 border-b dark:border-space-gray-700 text-center">
                         <input
                           type="number"
                           className="space-input text-center"
