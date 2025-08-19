@@ -155,6 +155,8 @@ const BurnPlanCalendar = () => {
                     const allocation = burnPlan.weeks[week.id].allocations.find(
                       a => a.personnelId === resource.id
                     );
+
+                    const [weeklyHours, setWeeklyHours] = useState<number>(allocation?.hours ?? suggestedHours)
                     
                     return (
                       <td key={week.id} className="p-2 border-b dark:border-space-gray-700 text-center">
@@ -164,11 +166,13 @@ const BurnPlanCalendar = () => {
                           min={0}
                           step={1}
                           placeholder={suggestedHours.toString()}
-                          value={allocation?.hours || suggestedHours}
+                          value={weeklyHours}
                           onChange={(e) => {
-                            const hours = Number(e.target.value);
+                            const hours = Number(e.target.value)
+                            setWeeklyHours(hours)
+
                             personnel[resourceIndex].tasks.forEach(task => {
-                              const taskHourRatio = task.hours / resource.totalHours;
+                              const taskHourRatio = task.hours / resource.totalHours
                               updateBurnPlanAllocation({
                                 weekId: week.id,
                                 personnelId: resource.id,
